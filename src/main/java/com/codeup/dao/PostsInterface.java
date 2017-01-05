@@ -4,8 +4,7 @@ import com.codeup.models.Post;
 
 import java.util.List;
 
-public interface PostDao {
+public interface PostsInterface {
     List<Post> all();
-
     Long insert(Post post);
 }

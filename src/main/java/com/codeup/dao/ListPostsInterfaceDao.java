@@ -2,10 +2,17 @@ package com.codeup.dao;
 
 import com.codeup.models.Post;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.lang.Long;
 
-public class ListPostsDao implements PostDao {
+public class ListPostsInterfaceDao implements PostsInterface {
     private List<Post> posts;
+
+    public ListPostsInterfaceDao(){
+        posts = new ArrayList<>();
+    }
+
     @Override
     public List<Post> all() {
         if (posts == null) {
@@ -19,8 +26,14 @@ public class ListPostsDao implements PostDao {
         if (posts == null) {
             posts = generatePosts();
         }
-        post.setId((long) posts.size());
-        posts.add(new Post());
-        return posts;
+        post.setId((long) posts.size()+1);
+        posts.add(post);
+        return post.getId();
+    }
+
+
+
+    private ArrayList<Post> generatePosts(){
+        return null;
     }
 }

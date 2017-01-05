@@ -1,13 +1,11 @@
 package com.codeup.dao;
 
-import com.codeup.models.Post;
-
 public class DaoFactory {
-    private static Post postsDao;
+    private static PostsInterface postsDao;
 
-    public static Post getPostsDao() {
+    public static PostsInterface getPostsDao() {
         if (postsDao == null) {
-            postsDao = new ListPostsDao();
+            postsDao = new ListPostsInterfaceDao();
         }
         return postsDao;
     }

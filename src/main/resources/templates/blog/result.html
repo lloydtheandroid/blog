@@ -6,9 +6,12 @@
 </head>
 <body>
 <div class="container">
-    <h1>View Posts</h1>
+    <h1>Result</h1>
 
-
+        <p th:text="'id: ' + ${post.id}"></p>
+        <p th:text="'title: ' + ${post.title}"></p>
+        <p th:text="'body: ' + ${post.body}"></p>
+        <a href="/post">Submit another message</a>
 
     <footer th:replace="fragments/footer :: footer">
         this is the current footer
