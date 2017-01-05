@@ -1,4 +1,4 @@
-package com.codeup;
+package com.codeup.controllers;
 
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
