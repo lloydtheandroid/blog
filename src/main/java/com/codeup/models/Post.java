@@ -10,6 +10,7 @@ public class Post {
     private long id;
     private String title;
     private String body;
+    private String imgUrl;
 
     public long getId() {
         return id;
@@ -35,4 +36,11 @@ public class Post {
         this.body = body;
     }
 
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
 }

@@ -6,21 +6,45 @@
 </head>
 <body>
 <div class="container">
-    <h1>View Posts</h1>
+    <div class="page-header">
+        <h1>Blog <small>Blog-a-riffic</small></h1>
+    </div>
 
-    <table class="table table-hover">
-        <tr>
-            <th>ID</th>
-            <th>TITLE</th>
-            <th>BODY</th>
-        </tr>
-        <tr th:each="p : ${posts}">
-            <td th:text="${p.id}">001</td>
-            <td th:text="${p.title}">title</td>
-            <td th:text="${p.body}">body</td>
-        </tr>
+    <!--<table class="table table-hover">-->
+        <!--<tr>-->
+            <!--<th>ID</th>-->
+            <!--<th>TITLE</th>-->
+            <!--<th>BODY</th>-->
+        <!--</tr>-->
+        <!--<tr th:each="p : ${posts}">-->
+            <!--<td th:text="${p.id}">001</td>-->
+            <!--<td th:text="${p.title}">title</td>-->
+            <!--<td th:text="${p.body}">body</td>-->
+            <!--<td><img th:src="@{p.imgUrl}" /></td>-->
+        <!--</tr>-->
+    <!--</table>-->
 
-    </table>
+    <!--&lt;!&ndash;<div class="panel panel-default" th:each="p : ${posts}">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="panel-heading">&ndash;&gt;-->
+            <!--&lt;!&ndash;<h3 class="panel-title" th:text="${p.title}">Panel title</h3>&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<div class="panel-body" th:text="${p.body}">&ndash;&gt;-->
+            <!--&lt;!&ndash;Panel content&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;<a href="/post">Submit another message</a>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+    <div class="media" th:each="p : ${posts}">
+        <div class="media-left">
+            <a href="#">
+                <img th:src="${(p.imgUrl)}" alt=""/>
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading" th:text="${p.title}">Media heading</h4>
+            <div th:text="${p.body}"></div>
+        </div>
+    </div>
 
 
     <footer th:replace="fragments/footer :: footer">
