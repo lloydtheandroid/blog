@@ -5,34 +5,15 @@
     <title>title</title>
 </head>
 <body>
+<nav th:replace="fragments/nav :: nav">
+    Placeholder for nav bar
+</nav>
+
 <div class="container">
     <div class="page-header">
         <h1>Blog <small>Blog-a-riffic</small></h1>
     </div>
 
-    <!--<table class="table table-hover">-->
-        <!--<tr>-->
-            <!--<th>ID</th>-->
-            <!--<th>TITLE</th>-->
-            <!--<th>BODY</th>-->
-        <!--</tr>-->
-        <!--<tr th:each="p : ${posts}">-->
-            <!--<td th:text="${p.id}">001</td>-->
-            <!--<td th:text="${p.title}">title</td>-->
-            <!--<td th:text="${p.body}">body</td>-->
-            <!--<td><img th:src="@{p.imgUrl}" /></td>-->
-        <!--</tr>-->
-    <!--</table>-->
-
-    <!--&lt;!&ndash;<div class="panel panel-default" th:each="p : ${posts}">&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="panel-heading">&ndash;&gt;-->
-            <!--&lt;!&ndash;<h3 class="panel-title" th:text="${p.title}">Panel title</h3>&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<div class="panel-body" th:text="${p.body}">&ndash;&gt;-->
-            <!--&lt;!&ndash;Panel content&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--&lt;!&ndash;<a href="/post">Submit another message</a>&ndash;&gt;-->
-    <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
     <div class="media" th:each="p : ${posts}">
         <div class="media-left">
