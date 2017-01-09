@@ -37,17 +37,21 @@ public class PostController {
         return "blog/show";
     }
 
-    @GetMapping("/posts/{id}/edit")
-    public String showEditForm(Model model) {
-        //TODO: use the passed id to find the record in the database
-        //TODO: add to the model
+    @GetMapping("/blog/{id}/edit")
+    public String showEditForm(Model model, @PathVariable long id) {
+        Post post = DaoFactory.getPostsDao().find(id);
+        model.addAttribute("post", post);
         return "blog/edit";
     }
 
     @PostMapping("/posts/{{id}/edit")
     public String update(@ModelAttribute Post editedPost, @PathVariable long id) {
-        //TODO: find the existing record in the databaase with the passed id
-        //TODO: update the relevant fields
-        //TODO: update the record in the database
+        Post exisingPost = DaoFactory.getPostsDao().find(id);
+        String newTitle = editedPost.getTitle();
+        String newBody = editedPost.getBody();
+        exisingPost.setTitle(newTitle);
+        exisingPost.setBody(newBody);
+        DaoFactory.getPostsDao().update(exisingPost);
+        return "redirect:/posts" + exisingPost.getId();
     }
 }

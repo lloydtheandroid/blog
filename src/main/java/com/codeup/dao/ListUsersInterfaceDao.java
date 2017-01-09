@@ -16,6 +16,7 @@ public class ListUsersInterfaceDao implements UsersInterface {
 
     @Override
     public User findByUsername(String username) {
+
         return null;
     }
 
@@ -28,7 +29,15 @@ public class ListUsersInterfaceDao implements UsersInterface {
 
     @Override
     public Integer updateUser(User user) {
+
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "User[id=%d, firstName='%s', lastName='%s']",
+                id, firstName, lastName);
     }
 }
 

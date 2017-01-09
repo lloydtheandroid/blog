@@ -2,13 +2,30 @@ package com.codeup.models;
 
 import com.codeup.util.Password;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "users")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(nullable = false)
     private String username;
+
+    @Column
     private String email;
+
+    @Column(nullable = false)
     private String password;
-//    private String bio;
-//    private String skills;
+
+    @Column(nullable = false)
+    private String firstName;
+
+    @Column(nullable = false)
+    private String lastName;
 
     public User() {}
 
@@ -18,13 +35,13 @@ public class User {
         setPassword(password);
     }
 
-    public User(long id, String username, String email, String password, String bio, String skills) {
+    public User(long id, String username, String email, String password, String firstName, String lastName) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
-//        this.bio = bio;
-//        this.skills=skills;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public long getId() {
@@ -59,18 +76,18 @@ public class User {
         this.password = Password.hash(password);
     }
 
-//    public String getSkills() {
-//        return skills;
-//    }
-//
-//    public void setSkills(String skills) {
-//        this.skills = skills;
-//    }
-//    public String getBio() {
-//        return bio;
-//    }
-//
-//    public void setBio(String bio) {
-//        this.bio = bio;
-//    }
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String skills) {
+        this.firstName = firstName;
+    }
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String bio) {
+        this.lastName = lastName;
+    }
 }

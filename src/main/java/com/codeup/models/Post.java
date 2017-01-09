@@ -21,6 +21,9 @@ public class Post {
     @Column
     private String imgUrl;
 
+    @OneToOne
+    private User owner;
+
     public long getId() {
         return id;
     }
