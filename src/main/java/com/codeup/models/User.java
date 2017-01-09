@@ -7,8 +7,8 @@ public class User {
     private String username;
     private String email;
     private String password;
-    private String bio;
-    private String skills;
+//    private String bio;
+//    private String skills;
 
     public User() {}
 
@@ -23,8 +23,8 @@ public class User {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.bio = bio;
-        this.skills=skills;
+//        this.bio = bio;
+//        this.skills=skills;
     }
 
     public long getId() {
@@ -59,18 +59,18 @@ public class User {
         this.password = Password.hash(password);
     }
 
-    public String getSkills() {
-        return skills;
-    }
-
-    public void setSkills(String skills) {
-        this.skills = skills;
-    }
-    public String getBio() {
-        return bio;
-    }
-
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
+//    public String getSkills() {
+//        return skills;
+//    }
+//
+//    public void setSkills(String skills) {
+//        this.skills = skills;
+//    }
+//    public String getBio() {
+//        return bio;
+//    }
+//
+//    public void setBio(String bio) {
+//        this.bio = bio;
+//    }
 }

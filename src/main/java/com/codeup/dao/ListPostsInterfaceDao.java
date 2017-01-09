@@ -25,4 +25,9 @@ public class ListPostsInterfaceDao implements PostsInterface {
         session.save(post);
         tx.commit();
     }
+    public Post find(long id) {
+        return (Post) session.createQuery("from Post where id = :id")
+                .setParameter("id", id)
+                .uniqueResult();
+    }
 }
