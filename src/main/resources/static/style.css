@@ -2,3 +2,9 @@ body {
     color: hotpink;
     background-color: midnightblue;
 }
+
+nav img {
+    width: auto;
+    height: 100%;
+
+}

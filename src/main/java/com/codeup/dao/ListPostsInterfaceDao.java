@@ -1,39 +1,28 @@
 package com.codeup.dao;
 
 import com.codeup.models.Post;
-
-import java.util.ArrayList;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 import java.util.List;
-import java.lang.Long;
 
 public class ListPostsInterfaceDao implements PostsInterface {
-    private List<Post> posts;
+    private Session session;
 
-    public ListPostsInterfaceDao(){
-        posts = new ArrayList<>();
+    public ListPostsInterfaceDao(Session session){
+
+        this.session = session;
     }
 
     @Override
     public List<Post> all() {
-        if (posts == null) {
-            posts = generatePosts();
-        }
-        return posts;
+
+        return session.createQuery("from Post").list();
     }
 
     @Override
-    public Long insert(Post post) {
-        if (posts == null) {
-            posts = generatePosts();
-        }
-        post.setId((long) posts.size()+1);
-        posts.add(post);
-        return post.getId();
-    }
-
-
-
-    private ArrayList<Post> generatePosts(){
-        return null;
+    public void insert(Post post){
+        Transaction tx = session.beginTransaction();
+        session.save(post);
+        tx.commit();
     }
 }

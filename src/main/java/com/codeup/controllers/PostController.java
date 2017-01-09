@@ -17,12 +17,7 @@ public class PostController {
 
     @GetMapping("/index")
     public String index(Model model) {
-        System.out.println("index!");
         List<Post> post = DaoFactory.getPostsDao().all();
-        for (Post p : post) {
-            System.out.println(p.getId());
-            System.out.println(p.getTitle());
-        }
         model.addAttribute("posts", post);
         return "/blog/index";
     }
@@ -35,10 +30,11 @@ public class PostController {
 
     @PostMapping("/post")
     public String postSubmit(@ModelAttribute Post post) {
-        System.out.println("postSubmit!");
-        System.out.println(post.getId());
-        System.out.println(post.getTitle());
         DaoFactory.getPostsDao().insert(post);
         return "redirect:/blog/index";
     }
+//    @GetMapping("/post/{id}")
+//
+//    return "blog/post/{id}"
+
 }
