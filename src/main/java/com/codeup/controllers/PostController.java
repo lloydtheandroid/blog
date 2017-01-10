@@ -21,13 +21,13 @@ public class PostController {
         return "/blog/index";
     }
 
-    @GetMapping("/post")
+    @GetMapping("/create")
     public String postForm(Model model) {
         model.addAttribute("post", new Post());
         return "/blog/post";
     }
 
-    @PostMapping("/post/")
+    @PostMapping("/create")
     public String postSubmit(@ModelAttribute Post post) {
         DaoFactory.getPostsDao().insert(post);
         return "redirect:/blog";
