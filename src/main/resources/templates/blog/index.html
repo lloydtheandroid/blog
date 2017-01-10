@@ -14,7 +14,6 @@
         <h1>Blog <small>Blog-a-riffic</small></h1>
     </div>
 
-
     <div class="media" th:each="p : ${posts}">
         <div class="media-left">
             <a href="#">
@@ -26,6 +25,7 @@
             <div th:text="${p.body}"></div>
         </div>
     </div>
+
 
 
     <footer th:replace="fragments/footer :: footer">

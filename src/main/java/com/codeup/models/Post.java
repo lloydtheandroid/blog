@@ -1,7 +1,11 @@
 package com.codeup.models;
 
 
+import org.hibernate.validator.constraints.NotBlank;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 @Entity
@@ -12,9 +16,13 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotBlank(message = "Title can't be empty.")
+    @Size(min = 3, message = "Title must have at least 3 characters.")
     @Column(nullable = false)
     private String title;
 
+    @NotBlank(message = "Body can't be empty")
+    @Size(min = 3, message = "Body must have at least 3 characters")
     @Column(nullable = false)
     private String body;
 

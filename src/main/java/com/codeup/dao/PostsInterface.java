@@ -9,5 +9,5 @@ public interface PostsInterface {
     List all();
     void insert(Post post);
     Post find(long id);
-    Post update(long id);
+    void update(Post post);
 }
