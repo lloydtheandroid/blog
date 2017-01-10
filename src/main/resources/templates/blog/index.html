@@ -13,24 +13,26 @@
     <div class="page-header">
         <h1>Blog <small>Blog-a-riffic</small></h1>
     </div>
-
-    <div class="media" th:each="p : ${posts}">
-        <div class="media-left">
-            <a href="#">
-                <img th:src="${(p.imgUrl)}" alt=""/>
-            </a>
+    <div class="row">
+        <div class="media col-xs-12" th:each="p : ${posts}">
+            <div class="media-left">
+                <a th:href="@{|/blog/${p.id}/edit|}">
+                    <img th:src="${(p.imgUrl)}" alt=""/>
+                </a>
+            </div>
+            <div class="media-body">
+                <h4 class="media-heading" th:text="${p.title}">Media heading</h4>
+                <div th:text="${p.body}"></div>
+            </div>
         </div>
-        <div class="media-body">
-            <h4 class="media-heading" th:text="${p.title}">Media heading</h4>
-            <div th:text="${p.body}"></div>
+        <div class="col-xs-12">
+            <a class="btn btn-default" th:href="@{|/blog/create|}" role="button">Create Post</a>
         </div>
     </div>
-
-
-
-    <footer th:replace="fragments/footer :: footer">
-        this is the current footer
-    </footer>
 </div>
+
+<footer th:replace="fragments/footer :: footer">
+    this is the current footer
+</footer>
 </body>
 </html>

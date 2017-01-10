@@ -24,11 +24,17 @@ public class PostController {
     @GetMapping("/create")
     public String postForm(Model model) {
         model.addAttribute("post", new Post());
-        return "/blog/post";
+        return "/blog/create";
     }
 
     @PostMapping("/create")
-    public String postSubmit(@ModelAttribute Post post) {
+    public String postSubmit(@Valid Post post, Errors errors, Model model) {
+
+        if(errors.hasErrors()){
+            model.addAttribute("errors", errors);
+            model.addAttribute("post", post);
+            return "blog/create";
+        }
         DaoFactory.getPostsDao().insert(post);
         return "redirect:/blog";
     }
@@ -39,14 +45,14 @@ public class PostController {
         return "blog/show";
     }
 
-    @GetMapping("/posts/{id}/edit")
+    @GetMapping("/{id}/edit")
     public String showEditForm(Model model, @PathVariable long id) {
         Post post = DaoFactory.getPostsDao().find(id);
         model.addAttribute("post", post);
         return "blog/edit";
     }
 
-    @PostMapping("/posts/{id}/edit")
+    @PostMapping("/{id}/edit")
     public String update(@Valid Post editedPost, Errors errors, Model model) {
 
         if(errors.hasErrors()){
