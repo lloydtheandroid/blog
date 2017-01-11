@@ -1,7 +1,6 @@
-package com.codeup.dao;
+package com.codeup.repository;
 
 import com.codeup.models.Post;
-import javafx.geometry.Pos;
 
 import java.util.List;
 

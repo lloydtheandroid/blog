@@ -1,6 +1,6 @@
 package com.codeup.controllers;
 
-import com.codeup.dao.DaoFactory;
+import com.codeup.repository.DaoFactory;
 import com.codeup.models.Post;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

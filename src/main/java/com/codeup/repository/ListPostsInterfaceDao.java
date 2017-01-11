@@ -1,4 +1,4 @@
-package com.codeup.dao;
+package com.codeup.repository;
 
 import com.codeup.models.Post;
 import org.hibernate.Session;

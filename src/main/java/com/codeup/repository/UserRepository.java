@@ -1,10 +1,10 @@
-package com.codeup.dao;
+package com.codeup.repository;
 
 import com.codeup.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
-public interface UsersInterface extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
    User findByUsername(String username);
 
    User findByUsernameIgnoreCase(String username);

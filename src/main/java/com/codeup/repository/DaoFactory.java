@@ -1,4 +1,4 @@
-package com.codeup.dao;
+package com.codeup.repository;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
