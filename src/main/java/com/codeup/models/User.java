@@ -1,5 +1,8 @@
 package com.codeup.models;
 
+import com.codeup.util.LocalDateTimePersistenceConverter;
+import com.codeup.service.MarkdownConverter;
+
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.util.StringUtils;
