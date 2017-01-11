@@ -60,7 +60,6 @@ public class PostController {
             model.addAttribute("post", editedPost);
             return "blog/edit";
         }
-
         Post existingPost = DaoFactory.getPostsDao().find(editedPost.getId());
         String newTitle = editedPost.getTitle();
         String newBody = editedPost.getBody();

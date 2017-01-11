@@ -24,12 +24,16 @@ public class Post {
     @GeneratedValue
     private Long Id;
 
+    @NotBlank(message = "Posts must have a title")
+    @Size(min = 3, message = "A title must be at least 3 characters.")
     @Column(length = 250, nullable = false)
     private String title;
 
     @Lob
     private String shortTextPart;
 
+    @NotBlank(message = "Post body cannot be empty")
+    @Size(min = 3, message = "A title must be at least 3 characters.")
     @Lob
     @Column(nullable = false)
     private String fullPostText;
