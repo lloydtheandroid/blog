@@ -5,17 +5,25 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 @Entity
-@Table(name = "roles")
-public class Role {
+@Table(name = "tags")
+public class Tag {
+
     @Id
     @GeneratedValue
     private Long Id;
 
-    @Column(unique = true, nullable = false, length = 50)
+    @Column(length = 30, nullable = false, unique = true)
     private String name;
 
-    @ManyToMany(mappedBy = "roles")
-    private Collection<User> users = new ArrayList<>();;
+    @ManyToMany(mappedBy = "tags")
+    private Collection<Post> posts = new ArrayList<>();
+
+    public Tag() {
+    }
+
+    public Tag(String name) {
+        this.name = name;
+    }
 
     public Long getId() {
         return Id;
@@ -33,17 +41,17 @@ public class Role {
         this.name = name;
     }
 
-    public Collection<User> getUsers() {
-        return users;
+    public Collection<Post> getPosts() {
+        return posts;
     }
 
-    public void setUsers(Collection<User> users) {
-        this.users = users;
+    public void setPosts(Collection<Post> posts) {
+        this.posts = posts;
     }
 
     @Override
     public String toString() {
-        return "Role{" +
+        return "Tag{" +
                 "name='" + name + '\'' +
                 '}';
     }
