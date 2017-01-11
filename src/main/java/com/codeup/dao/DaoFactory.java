@@ -16,13 +16,4 @@ public class DaoFactory {
         }
         return postsDao;
     }
-
-
-    public static UsersInterface getUsersDao() {
-        if (usersDao == null) {
-            usersDao = new ListUsersInterfaceDao(session);
-        }
-        return usersDao;
-    }
-
 }
