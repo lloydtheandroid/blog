@@ -1,6 +1,5 @@
 package com.codeup.service;
 
-import org.apache.commons.io.FilenameUtils;
 import org.springframework.stereotype.Service;
 
 @Service("fileNameGenerator")
