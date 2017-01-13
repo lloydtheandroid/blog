@@ -1,7 +1,7 @@
 package com.codeup.service;
 
-import com.codeup.models.Role;
-import com.codeup.models.User;
+import com.codeup.model.Role;
+import com.codeup.model.User;
 import com.codeup.repository.RoleRepository;
 import com.codeup.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Service("userService")

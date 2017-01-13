@@ -1,7 +1,6 @@
 package com.codeup.repository;
 
-
-import com.codeup.models.PostRating;
+import com.codeup.model.PostRating;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

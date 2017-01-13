@@ -1,8 +1,7 @@
 package com.codeup.service;
 
-
-import com.codeup.models.Post;
-import com.codeup.models.PostEditDto;
+import com.codeup.model.Post;
+import com.codeup.model.PostEditDto;
 import org.springframework.data.domain.Page;
 
 import java.util.List;

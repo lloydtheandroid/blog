@@ -1,6 +1,6 @@
 package com.codeup.validator;
 
-import com.codeup.models.User;
+import com.codeup.model.User;
 import com.codeup.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

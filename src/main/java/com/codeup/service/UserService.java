@@ -1,7 +1,6 @@
 package com.codeup.service;
 
-
-import com.codeup.models.User;
+import com.codeup.model.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface UserService extends UserDetailsService {
@@ -35,3 +34,4 @@ public interface UserService extends UserDetailsService {
     User currentUser();
 
 }
+

@@ -2,20 +2,16 @@ package com.codeup.service;
 
 import org.apache.commons.io.FilenameUtils;
 import org.imgscalr.Scalr;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
-
 
 @Service("avatarService")
 public class AvatarServiceImpl implements AvatarService {
@@ -62,6 +58,8 @@ public class AvatarServiceImpl implements AvatarService {
     private BufferedImage resize(BufferedImage image, int size) {
         BufferedImage result = Scalr.resize(image, Scalr.Mode.FIT_EXACT, size, size);
 
+        // would be better to crop image if not square, instead of just resizing without preserving proportions
+
         return result;
     }
 
@@ -72,5 +70,4 @@ public class AvatarServiceImpl implements AvatarService {
     public void setFileNameGenerator(FileNameGenerator fileNameGenerator) {
         this.fileNameGenerator = fileNameGenerator;
     }
-
 }

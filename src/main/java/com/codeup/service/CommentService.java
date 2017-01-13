@@ -1,10 +1,8 @@
 package com.codeup.service;
 
-import com.codeup.controllers.ForbiddenException;
-import com.codeup.models.Comment;
-import com.codeup.models.Post;
-
-import java.util.List;
+import com.codeup.controller.ForbiddenException;
+import com.codeup.model.Comment;
+import com.codeup.model.Post;
 
 public interface CommentService {
 

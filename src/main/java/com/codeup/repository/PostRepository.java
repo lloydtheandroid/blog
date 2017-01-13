@@ -1,6 +1,6 @@
 package com.codeup.repository;
 
-import com.codeup.models.Post;
+import com.codeup.model.Post;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;

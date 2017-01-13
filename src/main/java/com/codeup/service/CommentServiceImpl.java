@@ -1,7 +1,7 @@
 package com.codeup.service;
 
-import com.codeup.controllers.ForbiddenException;
-import com.codeup.models.*;
+import com.codeup.controller.ForbiddenException;
+import com.codeup.model.*;
 import com.codeup.repository.CommentRatingRepository;
 import com.codeup.repository.CommentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -66,7 +66,6 @@ public class CommentServiceImpl implements CommentService {
         comment.setDeleted(true);
 
         commentRepository.saveAndFlush(comment);
-
     }
 
     @Override
@@ -84,6 +83,8 @@ public class CommentServiceImpl implements CommentService {
         }
 
         comment.setCommentText(newCommentData.getCommentText());
+
+        comment.setModifiedDateTime(LocalDateTime.now());
 
         commentRepository.saveAndFlush(comment);
     }
@@ -112,5 +113,4 @@ public class CommentServiceImpl implements CommentService {
 
         commentRatingRepository.saveAndFlush(rating);
     }
-
 }

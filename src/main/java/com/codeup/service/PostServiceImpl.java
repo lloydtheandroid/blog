@@ -1,9 +1,9 @@
 package com.codeup.service;
 
-import com.codeup.models.*;
 import com.codeup.repository.PostRatingRepository;
 import com.codeup.repository.PostRepository;
 import com.codeup.repository.TagRepository;
+import com.codeup.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
